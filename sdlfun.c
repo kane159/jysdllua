@@ -504,7 +504,7 @@ int JY_SetClip(int x1,int y1,int x2,int y2)
     if(g_Rotate==0)
     {
       int temprect=0;
-      temprect=RotateRect(&rect)
+      temprect=RotateRect(&rect);
       ClipRect[currentRect]=RotateRect(&temprect);
     }
     else if(g_Rotate==1)
@@ -571,7 +571,7 @@ int JY_DrawRect(int x1,int y1,int x2,int y2,int color)
 
   if(g_Rotate==0)
   {
-    rect3=RotateRect(&rect1)
+    rect3=RotateRect(&rect1);
     rect2=RotateRect(&rect3);
   }
   else
@@ -910,7 +910,7 @@ int JY_Background(int x1,int y1,int x2,int y2,int Bright)
 
   if(g_Rotate==0)
   {
-    r3=RotateRect(&r1)
+    r3=RotateRect(&r1);
     r2=RotateRect(&r3);
   }
   else
