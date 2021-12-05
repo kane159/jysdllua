@@ -503,7 +503,7 @@ int JY_SetClip(int x1,int y1,int x2,int y2)
 
     if(g_Rotate==0)
     {
-      int temprect=0;
+      SDL_Rect temprect=Rota;
       temprect=RotateRect(&rect);
       ClipRect[currentRect]=RotateRect(&temprect);
     }
