@@ -503,7 +503,9 @@ int JY_SetClip(int x1,int y1,int x2,int y2)
 
     if(g_Rotate==0)
     {
-      ClipRect[currentRect]=RotateRect(&RotateRect(&rect));
+      int temprect=0;
+      temprect=RotateRect(&rect)
+      ClipRect[currentRect]=RotateRect(&temprect);
     }
     else if(g_Rotate==1)
     {
@@ -531,7 +533,7 @@ int JY_DrawRect(int x1,int y1,int x2,int y2,int color)
   Uint8 *p ;
   int lpitch=0;
   Uint32 c;
-  SDL_Rect rect1,rect2;
+  SDL_Rect rect1,rect2,rect3;
   int xmin,xmax,ymin,ymax;
 
   if(x1<x2)
@@ -569,7 +571,8 @@ int JY_DrawRect(int x1,int y1,int x2,int y2,int color)
 
   if(g_Rotate==0)
   {
-    rect2=RotateRect(&RotateRect(&rect1));
+    rect3=RotateRect(&rect1)
+    rect2=RotateRect(&rect3);
   }
   else
   {
@@ -891,7 +894,7 @@ int BlitSurface(SDL_Surface* lps, int x, int y,int flag,int value)
 int JY_Background(int x1,int y1,int x2,int y2,int Bright)
 {
   SDL_Surface* lps1;
-  SDL_Rect r1,r2;
+  SDL_Rect r1,r2,r3;
 
   if(x2<=x1 || y2<=y1)
     return 0;
@@ -907,7 +910,8 @@ int JY_Background(int x1,int y1,int x2,int y2,int Bright)
 
   if(g_Rotate==0)
   {
-    r2=RotateRect(&RotateRect(&r1));
+    r3=RotateRect(&r1)
+    r2=RotateRect(&r3);
   }
   else
   {
