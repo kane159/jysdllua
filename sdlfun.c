@@ -240,6 +240,7 @@ int JY_LoadPicture(const char* str,int x,int y)
     {
       pictmp = SDL_DisplayFormat(tmppic);
       pic = SDL_DisplayFormat(pictmp);
+      SDL_FreeSurface(pictmp);
       SDL_FreeSurface(tmppic);
       if(g_Rotate == 1)
       {
