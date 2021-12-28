@@ -216,6 +216,7 @@ int JY_LoadPicture(const char* str,int x,int y)
   static SDL_Surface *pic=NULL;
 
   SDL_Surface *tmppic;
+  SDL_Surface *pictmp;
   SDL_Rect r;
   if(strlen(str)==0)
   {
@@ -237,7 +238,8 @@ int JY_LoadPicture(const char* str,int x,int y)
     tmppic = IMG_Load(str);
     if(tmppic)
     {
-      pic = tmppic;
+      pictmp = SDL_DisplayFormat(tmppic);
+      pic = SDL_DisplayFormat(pictmp);
       SDL_FreeSurface(tmppic);
       if(g_Rotate == 1)
       {
